@@ -1,0 +1,28 @@
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.SimpleTimeZone;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String[] input = scanner.nextLine().split(",");
+        String input2 = scanner.nextLine();
+        int n = Integer.parseInt(input2);
+        for (int i=0; i < n; i++) {
+            int j = 0;
+            int last = Integer.parseInt(input[input.length-1]);
+            for (j = input.length-1; j>0; j--){
+                input[j] = input[j-1];
+            }
+            input[0] = Integer.toString(last);
+        }
+        //System.out.println(Arrays.toString(input));
+        for (int j=0; j<input.length; j++){
+            if (j == input.length-1){
+                System.out.print(input[j]);
+            } else {
+                System.out.print(input[j] + ",");
+            }
+        }
+    }
+}
